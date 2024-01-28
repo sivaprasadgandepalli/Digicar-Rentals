@@ -175,7 +175,11 @@ export default function ViewCars() {
                                             <p>{car.number_plate}</p>
                                             <div className='d-flex'>
                                                 <p className='pr-1'>{car.rating}</p>
-                                                import ReactStars from 'react-rating-star-with-type'
+                                                <ReactStars
+                                                    value={car.rating}
+                                                    edit={true}
+                                                    activeColors={["#8568FC"]}
+                                                />
                                             </div>
                                         </div>
                                         <div className='flex items-center justify-between'>
