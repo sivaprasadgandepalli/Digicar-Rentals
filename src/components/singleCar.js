@@ -18,10 +18,10 @@ export default function CarDetails() {
     }
     return (
         <div className="container">
-            <div className="row mt-5">
+            <div className="row mt-5 mb-5">
                 <div className="col-md-1"></div>
                 <div className="col-md-5">
-                    <img src={location.state.req[0].car_img} className="h-64 mix-blend-multiply" alt="car" />
+                    <img src={location.state.req[0].car_img} className="h-64 mix-blend-multiply mt-5" alt="car" />
                 </div>
                 <div className="col-md-5 text-white">
                     <div className="">
@@ -32,7 +32,7 @@ export default function CarDetails() {
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td colSpan={2}>
+                                    <td colSpan={2} className="text-justify">
                                         `The {location.state.req[0].comapany} is the high-performance version of the 2 Series 4-door coupé. The first generation of the {location.state.req[0].car_name} is the F87 coupé and is powered by turbocharged.`
                                     </td>
                                 </tr>
@@ -65,9 +65,9 @@ export default function CarDetails() {
                                     <td>{location.state.req[0].price}</td>
                                 </tr>
 
-                                <tr>
-                                    <th><button className="btn btn-sm btn-danger" onClick={() => navigate(-1)}>Go Back</button></th>
-                                    <td><button className="btn btn-sm btn-primary" onClick={send} >Book Car</button></td>
+                                <tr className="">
+                                    <th ><button className="btn btn-sm btn-danger mt-3 px-3" onClick={() => navigate(-1)}>Go Back</button></th>
+                                    <td><button className="btn btn-sm btn-primary mt-3 px-3" onClick={send} >Book Car</button></td>
                                 </tr>
                             </tbody>
                         </table>

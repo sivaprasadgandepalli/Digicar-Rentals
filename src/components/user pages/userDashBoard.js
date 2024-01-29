@@ -20,6 +20,7 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 2000);

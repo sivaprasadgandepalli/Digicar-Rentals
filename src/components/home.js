@@ -135,7 +135,7 @@ function Home() {
                     <div className='col-md-6 px-3 py-3'>
                         <div className='w-full'>
                             <p className='text-emerald-400 text-lg font-bold'>Plan your Trip now</p>
-                            <h2 className='text-2xl font-bold text-blue-900 my-4 md:text-5xl'>Explore the world with<br /> comfortable car</h2>
+                            <h2 className='text-2xl font-bold text-blue-900 mt-3 mb-4 md:text-4xl'>Explore the world with<br /> comfortable car</h2>
                             <p className='text-lg my-4 text-justify pr-1 lg:pr-5'>
                                 Embark on unforgettable adventures and discover the world in unparalleled comfort
                                 and style with our fleet of exceptionally comfortable cars.With our streamlined
@@ -185,7 +185,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className='col-md-3'>
+                    <div className='col-md-3 mb-4 lg:mb-2'>
                         <div className='flex flex-col justify-start items-center gap-1'>
                             <FaAward className='h-6 w-6' />
                             <CountUp duration={10} className="font-bold text-2xl" end={15} />
@@ -203,12 +203,12 @@ function Home() {
                     <h2 className=' font-bold text-2xl md:text-4xl'>Our Popular Vehicles</h2>
                     <p>Driving your dreams to reality with an exquisite fleet of versatile vehicles<br /> for unforgettable journeys.</p>
                 </div>
-                <div className=''>
+                <div>
                     <Slider {...settings}>
 
                         {carsData.map((car,ind) => {
                             return (
-                                <div className="rounded-md duration-150 hover:shadow-2xl overflow-hidden " key={ind}>
+                                <div className="rounded-md duration-150 overflow-hidden" key={ind}>
                                     <img
                                         src={car.car_img}
                                         alt="Laptop"
@@ -217,13 +217,14 @@ function Home() {
                                     <div className="p-4">
                                         <h1 className="text-lg font-semibold">{car.comapany}{" " + car.car_name}</h1>
                                         <p className="mt-3 text-sm text-gray-600">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis
+                                            amet consectetur adipisicing elit.
                                         </p>
-                                        <div className='flex flex-wrap justify-between items-center '>
+                                        <div className='flex flex-wrap justify-between items-center space-y-3'>
                                             <span className='font-bold text-lg'>${car.price.slice(3)}</span>
                                             <button
                                                 type="button"
-                                                className="rounded-md bg-black px-2.5 py-1 text-lg font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                                className="rounded-md bg-black px-2.5 py-1 text-lg  text-white shadow-sm hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                                                 onClick={() => handle(car.id)}
                                             >
                                                 Rent Now
@@ -279,21 +280,21 @@ function Home() {
 
                         <div className='row mt-5'>
                             <div className='col-md-4 '>
-                                <div className='flex  justify-start  gap-2 md:flex-col mb-2'>
+                                <div className='flex  justify-start  gap-2 md:flex-col gap-3 mb-2'>
                                     <FaTrophy className='h-12 w-12 text-white bg-green-700 p-2' />
                                     <span className="text-lg">First Class Services</span>
 
                                 </div>
                             </div>
                             <div className='col-md-4'>
-                                <div className='flex  justify-start  gap-2 md:flex-col mb-2'>
+                                <div className='flex  justify-start  gap-2 md:flex-col gap-3 mb-2'>
                                     <FaRoad className='h-12 w-12 text-white bg-green-700 p-2' />
                                     <span className="text-lg">24/7 road assistance</span>
 
                                 </div>
                             </div>
                             <div className='col-md-4'>
-                                <div className='flex  justify-start  gap-2 md:flex-col'>
+                                <div className='flex  justify-start  gap-2 md:flex-col gap-3'>
                                     <MdEmojiTransportation className='h-12 w-12 text-white bg-green-700 p-2' />
                                     <span className="text-lg">Free Pick-Up & Drop-Off</span>
 
@@ -422,13 +423,13 @@ function Home() {
                         <Accordion>
                             <Accordion.Item eventKey="0" className='border-0'>
                                 <Accordion.Header>How do I get started with Car Rental?</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body >
                                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1" className='border-0'>
                                 <Accordion.Header>Can I rent a car with a debit card??</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body className='break-all'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -440,7 +441,7 @@ function Home() {
                             </Accordion.Item>
                             <Accordion.Item eventKey="2" className='border-0'>
                                 <Accordion.Header>Can I cancel or modify my reservation?</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body className='break-all'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -456,7 +457,7 @@ function Home() {
                         <Accordion>
                             <Accordion.Item eventKey="0" className='border-0'>
                                 <Accordion.Header>What kind of Car Rental do I need?</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body className='break-all'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -468,7 +469,7 @@ function Home() {
                             </Accordion.Item>
                             <Accordion.Item eventKey="1" className='border-0'>
                                 <Accordion.Header>What is a rental car security deposit?</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body className='break-all'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -481,7 +482,7 @@ function Home() {
 
                             <Accordion.Item eventKey="2" className='border-0'>
                                 <Accordion.Header>Is it possible to extend my rental period?</Accordion.Header>
-                                <Accordion.Body>
+                                <Accordion.Body className='break-all'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut

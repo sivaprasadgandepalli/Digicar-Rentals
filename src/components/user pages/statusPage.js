@@ -3,14 +3,15 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-export default function Status(){
+import { Link } from "react-router-dom";
+export default function Status() {
   const nameRef = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [text, setText] = useState("");
   const [result, setResult] = useState("");
- 
+
   const handleSubmit = async (e) => {
     setResult("");
     e.preventDefault();
@@ -20,7 +21,7 @@ export default function Status(){
         position: "top-center"
       });
     }
-    else{
+    else {
       toast.success("Feeback submitted.Thank You !", {
         position: "top-center"
       });
@@ -31,16 +32,16 @@ export default function Status(){
       setResult("");
     }
   }
-    return(
+  return (
     <div className="container items-center text-center mb-5" id="App">
       <div className='introImg text-center row py-4 w-full mb-3'>
         <div className='col-md-12'>
           <h2 className='text-3xl mb-1'>Feedback</h2>
           <div className='flex items-center justify-center'>
             <Breadcrumb>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="/statusPage">
-                Feedback
+              <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
+              <Breadcrumb.Item >
+                <Link to="/statusPage">Feedback</Link>
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
@@ -90,7 +91,7 @@ export default function Status(){
         <div className="form__controls">
           <button className=" btn btn-success" id="button">Send Feedback</button>
         </div>
-      </form> 
+      </form>
     </div>
-    );
+  );
 }

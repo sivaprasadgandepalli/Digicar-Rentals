@@ -4,6 +4,7 @@ import ReactStars from 'react-rating-star-with-type'
 import { useNavigate } from "react-router-dom";
 import './cars.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import { Link } from 'react-router-dom';
 export default function ViewCars() {
     const [star, setStar] = useState(5);
 
@@ -150,15 +151,14 @@ export default function ViewCars() {
                         <h2 className='text-3xl mb-1'>Our Popular Cars</h2>
                         <div className='flex items-center justify-center'>
                             <Breadcrumb>
-                                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                                <Breadcrumb.Item href="/ViewCars">
-                                    Fleet
+                                <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
+                                <Breadcrumb.Item >
+                                <Link to="/ViewCars">Fleet</Link>
                                 </Breadcrumb.Item>
                             </Breadcrumb>
                         </div>
                     </div>
                 </div>
-                {/* <h2 className=' font-bold text-4xl bg-clip-text text-transparent bg-red-800 mt-4' id='anim'>Available Cars</h2> */}
                 <div>
                 </div>
                 <section className='px-10 py-10'>

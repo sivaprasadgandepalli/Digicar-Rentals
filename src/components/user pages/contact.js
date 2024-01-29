@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import './pageIntro.css';
+import { Link } from 'react-router-dom';
 export default function Contact() {
   return (
     <div className='container mb-5'>
@@ -17,24 +18,24 @@ export default function Contact() {
           <h2 className='text-3xl mb-1'>Contact Us</h2>
           <div className='flex items-center justify-center'>
             <Breadcrumb>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="">
-                Contact Us
+              <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
+              <Breadcrumb.Item >
+                <Link to="/contact">contact</Link>
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
         </div>
       </div>
       <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7621.462008006035!2d81.96709778604661!3d17.23183398182165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3771497483c021%3A0x1c6f8e2c23b8b470!2sMallisala%2C%20Andhra%20Pradesh%20533435!5e0!3m2!1sen!2sin!4v1706095314505!5m2!1sen!2sin" className='w-full my-3' height='450' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7621.462008006035!2d81.96709778604661!3d17.23183398182165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3771497483c021%3A0x1c6f8e2c23b8b470!2sMallisala%2C%20Andhra%20Pradesh%20533435!5e0!3m2!1sen!2sin!4v1706095314505!5m2!1sen!2sin" className='w-full my-3' height='450'></iframe>
       </div>
-      <div className='row pt-3 pb-2 px-3 bg-[#469cb9]'>
-        {/* <div className='col-md-1'></div> */}
-        <div className='col-md-6 mb-5'>
+      <div className='row pt-3 pb-2 px-3 bg-[#7bacbc] mx-0.5'>
+        <div className='col-md-1'></div>
+        <div className='col-md-5 mb-5 '>
           <div className='flex flex-col justify-between items-start space-y-8 overflow-hidden h-full'>
             <div className='flex flex-col '>
               <h2 className='font-bold mb-2 text-2xl'>Got A Question?</h2>
-              <p className='text-grey mt-2'>I would love to hear from you reach out to me with any comments,suggestions or enquiries and i will be happy to assist you.</p>
+              <p className='text-grey mt-2 break-all'>I would love to hear from you reach out to me with any comments,suggestions or enquiries and i will be happy to assist you.</p>
             </div>
             <div className='flex flex-col space-y-3 flex-wrap'>
               <div className='flex space-x-2 items-center'>
@@ -60,12 +61,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        <div className='col-md-6'>
+        <div className='col-md-1'></div>
+        <div className='col-md-4'>
 
           <div className=''>
-            <h4 className=' px-3 text-xl'>Get in Touch!</h4>
-            <Form className=' px-3 py-3'>
+            <h4 className='text-xl font-semibold'>Get in Touch!</h4>
+            <Form className='py-3'>
               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="Your Name" />
@@ -78,13 +79,13 @@ export default function Contact() {
                 <Form.Label>Subject</Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder='Type your message' />
               </Form.Group>
-              <Button variant="info" type="submit">
+              <Button variant="success" className='bg-success w-full' type="submit">
                 Submit
               </Button>
             </Form>
           </div>
         </div>
-        {/* <div className='col-md-1'></div> */}
+        <div className='col-md-1'></div>
       </div>
     </div>
   )

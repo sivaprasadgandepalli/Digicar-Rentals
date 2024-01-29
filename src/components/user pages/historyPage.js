@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -35,9 +35,9 @@ export default function History() {
           <h2 className='text-3xl mb-1'>History</h2>
           <div className='flex items-center justify-center'>
             <Breadcrumb>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="/historyPage">
-                history
+              <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
+              <Breadcrumb.Item >
+                <Link to="/historyPage">history</Link>
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
@@ -73,7 +73,7 @@ export default function History() {
             order.map((item, i) => {
               return (
                 <tr>
-                  <td>{i+1}</td>
+                  <td>{i + 1}</td>
                   <td>{item.uname}</td>
                   <td>{item.phone}</td>
                   <td>{item.Fdate}</td>

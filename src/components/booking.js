@@ -40,11 +40,11 @@ export default function BookCar() {
     }
     return (
         <div className="container-fluid mb-5">
-            <h2 className='font-bold text-center text-2xl . py-5 hover:underline  delay-400'>Car Rental Form</h2>
+            <h2 className='font-bold text-center text-2xl my-3 hover:underline  delay-400'>Car Rental Form</h2>
 
             <div className='row '>
                 <div className='col-md-1'></div>
-                <div className='col-md-4 p-3'>
+                <div className='col-md-4 p-3 border-2'>
                     <div className='bg-slate-500'>
                         <img src={location.state.data.img} className=' h-64' />
 
