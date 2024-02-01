@@ -3,31 +3,27 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+
 import { RotatingLines } from 'react-loader-spinner';
 export default function History() {
   const location = useLocation();
+  const uname = {"uname":localStorage.getItem("name")};
   const [order, setOrder] = useState([{}]);
   const [loading, setLoading] = useState(false);
   const currentUser = localStorage.getItem('name');
+  console.log(uname)
   useEffect(() => {
     setLoading(true);
-    axios.get('https://wide-eyed-long-johns-fawn.cyclic.app/getBookingData').then((res) => {
-      if (res.status == 200) {
-        setOrder(res.data);
-        console.log(order)
-        setLoading(false);
-      }
+    axios.post('http://localhost:5000/myRecords', uname).then((res) => {
+      setOrder(res.data);
+      console.log(order)
+      setLoading(false);
     }).catch((e) => {
       console.log(e);
+      setLoading(false);
     })
   }, [])
-  // useEffect(()=>{
-  //   const filtered=order.filter((order)=>{
-  //     return order.uname==currentUser;
-  //   })
-  //   console.log(filtered);
-  //   setOrder(...filtered);
-  // },[])
+
   return (
     <div className="container items-center text-center min-h-screen">
       <div className='introImg text-center row py-4 mb-3'>
@@ -57,8 +53,7 @@ export default function History() {
           </tr>
         </thead>
         <tbody>
-          {loading ? <div className='flex items-center justify-center w-full h-max'>
-            <RotatingLines
+          {loading ? <RotatingLines
               visible={true}
               height="64"
               width="64"
@@ -68,9 +63,8 @@ export default function History() {
               ariaLabel="rotating-lines-loading"
               wrapperStyle={{}}
               wrapperClass=""
-            />
-          </div> :
-            order.map((item, i) => {
+            /> :
+            order?.map((item, i) => {
               return (
                 <tr>
                   <td>{i + 1}</td>
