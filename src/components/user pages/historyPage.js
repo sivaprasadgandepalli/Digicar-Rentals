@@ -14,7 +14,7 @@ export default function History() {
   console.log(uname)
   useEffect(() => {
     setLoading(true);
-    axios.post('http://localhost:5000/myRecords', uname).then((res) => {
+    axios.post('https://wide-eyed-long-johns-fawn.cyclic.app/myRecords', uname).then((res) => {
       setOrder(res.data);
       console.log(order)
       setLoading(false);
