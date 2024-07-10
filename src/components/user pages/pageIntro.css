@@ -1,0 +1,8 @@
+.introImg{
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHzA9jgu2J0GmzzlLZ6DqB0TDonMR9y5gDbR-h6Tle8GB7O6qGKWbd7CRLbVgspA8T1o&usqp=CAU'); */
+    background: linear-gradient(178.6deg, rgb(20, 36, 50) 11.8%, rgb(124, 143, 161) 83.8%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+  }
