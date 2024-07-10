@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { useAuth } from './auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import user from '../images/revies/user.png'
 import Modal from 'react-bootstrap/Modal';
@@ -15,19 +15,19 @@ const menuItems = [
   },
   {
     name: 'Fleet',
-    href: './ViewCars',
+    href: '/ViewCars',
   },
   {
     name: 'History',
-    href: './historyPage'
+    href: '/historyPage'
   },
   {
     name: 'Feedback',
-    href: './statusPage',
+    href: '/statusPage',
   },
   {
     name: 'Contact',
-    href: './contact',
+    href: '/contact',
   }
 ]
 
@@ -51,7 +51,7 @@ export default function Navbar() {
   const [users, setUsers] = useState([{}]);
   let userInfo = {};
   useEffect(() => {
-    axios.get("http://localhost:5000/userData").
+    axios.get("https://digicar-rentals-backend.onrender.com/userData").
       then((res) => setUsers(res.data)
       );
     
@@ -75,26 +75,19 @@ export default function Navbar() {
           <ul className="ml-12 inline-flex space-x-8">
             {menuItems.map((item) => (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
                 >
                   {item.name}
 
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="hidden lg:inline-block">
 
-          {/* <button
-            type="button"
-            className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-
-            onClick={handleShow}>
-            profile
-          </button> */}
           <div className=' bg-green-900 h-12 rounded-full w-12 text-center text-white text-3xl  cursor-pointer' onClick={handleShow}>
             {isLogin() ? localStorage?.getItem('name')?.slice(0,1):"c"}
           </div>
@@ -137,7 +130,7 @@ export default function Navbar() {
                   <div className="inline-flex items-center space-x-2">
 
 
-                    <span className="font-bold">DevUI</span>
+                    <span className="font-bold">Digicar</span>
                   </div>
                   <div className="-mr-2">
                     <button
@@ -153,16 +146,16 @@ export default function Navbar() {
                 <div className="mt-6">
                   <nav className="grid gap-y-4">
                     {menuItems.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
                       >
                         <span className="ml-3 text-base font-medium text-gray-900">
                           {item.name}
                         </span>
 
-                      </a>
+                      </Link>
                     ))}
                   </nav>
                 </div>

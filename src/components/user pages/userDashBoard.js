@@ -17,9 +17,10 @@ import Footer from './Footer';
 import PrivateRoute from '../PrivateRoute';
 import { MutatingDots } from 'react-loader-spinner';
 function Dashboard() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 2000);

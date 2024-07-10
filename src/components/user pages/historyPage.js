@@ -14,8 +14,8 @@ export default function History() {
     axios.get('https://digicar-rentals-backend.onrender.com/getBookingData').then((res) => {
       if (res.status === 200) {
         const filteredData = res.data.filter(item => item.uname === currentUser);
-        setOrder(filteredData); 
-        console.log(filteredData); 
+        setOrder(filteredData);
+        console.log(filteredData);
         setLoading(false);
       }
     }).catch((e) => {
@@ -52,20 +52,21 @@ export default function History() {
         </thead>
         <tbody>
           {loading ? <RotatingLines
-              visible={true}
-              height="64"
-              width="64"
-              color="grey"
-              strokeWidth="5"
-              animationDuration="1.50"
-              ariaLabel="rotating-lines-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-            /> :
+            visible={true}
+            height="44"
+            width="44"
+            color="grey"
+            strokeWidth="3"
+            strokeColor='grey'
+            animationDuration="1.50"
+            ariaLabel="rotating-lines-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          /> :
             order.map((item, i) => {
               return (
                 <tr key={i}>
-                  <td>{i+1}</td>
+                  <td>{i + 1}</td>
                   <td>{item.uname}</td>
                   <td>{item.phone}</td>
                   <td>{item.Fdate}</td>

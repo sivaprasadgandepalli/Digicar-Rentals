@@ -164,7 +164,7 @@ export default function ViewCars() {
                     <div className='mx-auto lg:w-[90%]' id='main'>
                         {cars.map((car) => {
                             return (
-                                <article className='bg-[#22222210] transition ease-in-out delay-150 rounded'>
+                                <article className='bg-[#22222210] transition ease-in-out delay-150 rounded' key={car.car_name}>
                                     <div className='overflow-hidden p-1 w-full h-56'>
                                         <img src={car.car_img} alt={car.car_name} className='relative w-full h-full transition ease-in-out delay-200 hover:scale-110' />
                                     </div>

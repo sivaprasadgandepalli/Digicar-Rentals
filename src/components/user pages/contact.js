@@ -26,10 +26,10 @@ export default function Contact() {
         </div>
       </div>
       <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7621.462008006035!2d81.96709778604661!3d17.23183398182165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3771497483c021%3A0x1c6f8e2c23b8b470!2sMallisala%2C%20Andhra%20Pradesh%20533435!5e0!3m2!1sen!2sin!4v1706095314505!5m2!1sen!2sin" className='w-full my-3' height='450' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7621.462008006035!2d81.96709778604661!3d17.23183398182165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3771497483c021%3A0x1c6f8e2c23b8b470!2sMallisala%2C%20Andhra%20Pradesh%20533435!5e0!3m2!1sen!2sin!4v1706095314505!5m2!1sen!2sin" className='w-full my-3' height='450' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div className='row pt-3 pb-2 px-3 bg-[#e1eef2]'>
-        {/* <div className='col-md-1'></div> */}
+      <div className='row pt-3 pb-2 lg:w-[90%] mx-auto'>
+        
         <div className='col-md-6 mb-5'>
           <div className='flex flex-col justify-between items-start space-y-8 overflow-hidden h-full'>
             <div className='flex flex-col '>
@@ -84,7 +84,7 @@ export default function Contact() {
             </Form>
           </div>
         </div>
-        {/* <div className='col-md-1'></div> */}
+        
       </div>
     </div>
   )
