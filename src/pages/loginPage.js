@@ -9,7 +9,7 @@ import { FaUser, FaLock } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './auth';
+import { useAuth } from '../components/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 export default function LoginPage() {
@@ -44,7 +44,7 @@ export default function LoginPage() {
         if (userDet?.email === logData.email && userDet?.pwd === logData.pwd) {
             login(userDet.uname);
             navigate("/", { replace: true });
-            
+
         }
         else {
             handleShow();
@@ -58,7 +58,7 @@ export default function LoginPage() {
                 <div className="col-md-4 bg-light px-5 py-3">
 
                     <Form className='mt-4'>
-                        <h3 className='text-center pb-3'>Login Here</h3>
+                        <h3 className='text-center pb-3 text-3xl font-bold antialiased'>Sign In</h3>
                         <Form.Group className="mb-2" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <InputGroup className="mb-3">

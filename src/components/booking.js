@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import DateObject from "react-date-object";
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import Payment from '../payment';
+import Payment from '../pages/payment';
 import CarDetails from './singleCar';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -120,10 +120,10 @@ export default function BookCar() {
                             </div>
                         </Form.Group>
 
-                        <div className='flex'>
-                            <Button className='' type="submit" onClick={() => navigate("/")}>
+                        <div className='flex gap-2'>
+                            <button className='bg-rose-400 px-3 py-2 rounded-md' type="submit" onClick={() => navigate("/")}>
                                 cancel booking
-                            </Button>
+                            </button>
                             <button className='bg-emerald-300 px-3 py-1 rounded-md' type="submit">
                                 Submit
                             </button>

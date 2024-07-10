@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import slide3 from '../images/slide3.jpg';
 import aboutImg from '../images/aboutImg.jpg';
-import Navbar from './navbar';
+import Navbar from '../components/navbar';
 import Accordion from 'react-bootstrap/Accordion';
 import Marquee from "react-fast-marquee";
 import { FaCarAlt, FaUser, FaTrophy, FaRoad, FaAward } from "react-icons/fa";
@@ -142,11 +142,9 @@ function Home() {
                                 rental process, you can quickly and conveniently reserve your desired vehicle.
                             </p>
                         </div>
-                        <div className='flex gap-3 my-2'>
-                            <button className='btn btn-success  bg-emerald-400 px-7'><a href='#about'>Explore Us</a></button>
-                            <button className='btn text-white hover:bg-stone-400  bg-stone-900 px-7'>
-                                <Link to='/ViewCars'>Rent Car</Link>
-                            </button>
+                        <div className='flex gap-3 my-2 w-full'>
+                            <button className=' flex-grow lg:flex-grow-0 py-2 rounded-md text-white bg-emerald-400 px-3'><a href='#about'>Explore Us</a></button>
+                            <Link to='/ViewCars' className='flex-grow md:flex-grow-0 text-white text-center hover:bg-stone-400  bg-stone-900 px-3 py-2 rounded-md'>Rent Car</Link>
                         </div>
                     </div>
                     <div className='col-md-6'>
@@ -185,7 +183,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className='col-md-3'>
+                    <div className='col-md-3 mb-4'>
                         <div className='flex flex-col justify-start items-center gap-1'>
                             <FaAward className='h-6 w-6' />
                             <CountUp duration={10} className="font-bold text-2xl" end={15} />
@@ -206,7 +204,7 @@ function Home() {
                 <div className=''>
                     <Slider {...settings}>
 
-                        {carsData.map((car,ind) => {
+                        {carsData.map((car, ind) => {
                             return (
                                 <div className="rounded-md duration-150 hover:shadow-2xl overflow-hidden " key={ind}>
                                     <img
@@ -246,7 +244,7 @@ function Home() {
             <div className='container mt-16'>
                 <div className='row'>
                     <div className='col-md-7'>
-                        <img src={aboutImg} className='h-full w-full p-3' />
+                        <img src={aboutImg} className='h-full w-full md:p-3' />
                     </div>
                     <div className='col-md-5  pt-3  sm:px-5 '>
                         <h2 className='sm:text-4xl text-2xl font-bold text-blue-950   ' >Only Quality For Clients</h2>
@@ -327,7 +325,7 @@ function Home() {
                                         <h3>Pushpanjali</h3>
                                         <p>Marketing Executive Officer</p>
                                     </div>
-                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0'/>
+                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0' />
                                 </div>
                                 <div className='py-2'>
                                     <ReactStars
@@ -356,7 +354,7 @@ function Home() {
                                         <h3>Prem kumar</h3>
                                         <p>Ui/Ux developer</p>
                                     </div>
-                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0'/>
+                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0' />
                                 </div>
                                 <div className='py-2'>
                                     <ReactStars
@@ -386,11 +384,11 @@ function Home() {
                                         <h3>anik acharya</h3>
                                         <p>full stack developer</p>
                                     </div>
-                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0'/>
+                                    <img src={quotes} alt='quote' className='h-6 w-6 mix-blend-multiply absolute top-0 right-0' />
                                 </div>
                                 <div className='py-2'>
                                     <ReactStars
-                                        
+
                                         value={4.5}
                                         edit={true}
                                         activeColors={["#8568FC",]}

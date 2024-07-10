@@ -58,7 +58,7 @@ export default function SignupPage() {
         </div>
         <div className="col-md-4 bg-light px-5 py-3 mt-3">
           <Form className='mt-4'>
-            <h3 className='text-center pb-3'>Register Here</h3>
+            <h3 className='text-center pb-3 text-3xl font-bold antialiased'>Create Account</h3>
             <Form.Group className="mb-2" controlId="formBasicEmail">
               <Form.Label>User Name</Form.Label>
               <InputGroup className="mb-3">

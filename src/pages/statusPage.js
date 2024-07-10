@@ -1,4 +1,4 @@
-import "../status.css";
+import "../styles/status.css";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useRef, useState } from "react";
 import {toast } from 'react-toastify';
@@ -29,7 +29,7 @@ export default function Status(){
     }
   }
     return(
-    <div className="container items-center text-center mb-5" id="App">
+    <div className="container items-center text-center mb-5 md:min-h-screen" id="App">
       <div className='introImg text-center row py-4 w-full mb-3'>
         <div className='col-md-12'>
           <h2 className='text-3xl mb-1'>Feedback</h2>
@@ -43,7 +43,7 @@ export default function Status(){
           </div>
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="form__container bg-[#99f6e4]">
+      <form onSubmit={handleSubmit} className="form__container">
         <div className="form__controls">
           <label htmlFor="name">Name</label>
           <input

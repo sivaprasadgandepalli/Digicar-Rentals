@@ -8,7 +8,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import './pageIntro.css';
+import '../styles/pageIntro.css'
 export default function Contact() {
   return (
     <div className='container'>

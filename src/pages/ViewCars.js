@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import './cars.css';
+import '../styles/cars.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import StarRating from '../starComponent';
+import StarRating from '../components/starComponent';
 export default function ViewCars() {
     const cars = [{
         id: 1,
@@ -164,7 +164,7 @@ export default function ViewCars() {
                                             <p>{car.number_plate}</p>
                                             <div className='d-flex items-center'>
                                                 <p className='pr-1'>{car.rating}</p>
-                                                <StarRating count={car.rating}/>
+                                                <StarRating count={car.rating} />
                                             </div>
                                         </div>
                                         <div className='flex items-center justify-between'>
