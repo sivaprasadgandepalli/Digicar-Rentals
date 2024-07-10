@@ -1,7 +1,7 @@
 import "../status.css";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import { useEffect, useRef, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { useRef, useState } from "react";
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Status(){
   const nameRef = useRef();
@@ -9,10 +9,8 @@ export default function Status(){
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [text, setText] = useState("");
-  const [result, setResult] = useState("");
  
   const handleSubmit = async (e) => {
-    setResult("");
     e.preventDefault();
     // validating data
     if (!name || !email || !subject || text?.length < 10) {
@@ -28,7 +26,6 @@ export default function Status(){
       setName("");
       setSubject("");
       setText("");
-      setResult("");
     }
   }
     return(
@@ -86,7 +83,7 @@ export default function Status(){
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        <ToastContainer />
+       
         <div className="form__controls">
           <button className=" btn btn-success" id="button">Send Feedback</button>
         </div>

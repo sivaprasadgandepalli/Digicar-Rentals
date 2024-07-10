@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useLocation } from 'react-router-dom';
 import Home from '../home';
@@ -15,7 +15,7 @@ import SignupPage from '../signUp';
 import Navbar from '../navbar';
 import Footer from './Footer';
 import PrivateRoute from '../PrivateRoute';
-import { MutatingDots } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner';
 function Dashboard() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
@@ -28,17 +28,15 @@ function Dashboard() {
   }, [location])
   return (
     <div className='relative'>
-      {loading ? <div className='h-screen w-full flex items-center justify-center bg-black'>
-        <MutatingDots
+      {loading ? <div className='h-screen w-full flex items-center justify-center bg-slate-950'>
+        <ColorRing
           visible={true}
-          height="100"
-          width="100"
-          color="#910673"
-          secondaryColor="#060891"
-          radius="12.5"
-          ariaLabel="mutating-dots-loading"
+          height="80"
+          width="80"
+          ariaLabel="color-ring-loading"
           wrapperStyle={{}}
-          wrapperClass=""
+          wrapperClass="color-ring-wrapper"
+          colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
         />
       </div> :
         <>

@@ -1,4 +1,3 @@
-import { ChevronRight } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FaFacebookSquare } from "react-icons/fa";

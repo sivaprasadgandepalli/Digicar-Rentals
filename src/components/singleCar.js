@@ -1,9 +1,13 @@
-import { Table } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import ReactStars from 'react-rating-star-with-type';
+import { useEffect } from "react";
 export default function CarDetails() {
     const location = useLocation();
     const navigate = useNavigate();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     let data = {
         R_num: location.state.req[0].number_plate,
         name: location.state.req[0].car_name,

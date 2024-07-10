@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Payment from '../payment';
 import CarDetails from './singleCar';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 export default function BookCar() {
@@ -27,24 +27,26 @@ export default function BookCar() {
         if (uname === "" || phone === "" || pickTime === "" || Fdate === "" || Tdate === "") {
             toast.error("please verify your inputs!", {
                 position: "top-left"
-              });
+            });
             return null;
         }
         else {
-            axios.post('https://digicar-rentals-backend.onrender.com/bookCar',pdata)
-            .then((res) => console.log(res.status));
+            axios.post('https://digicar-rentals-backend.onrender.com/bookCar', pdata)
+                .then((res) => console.log(res.status));
             toast.success("Order placed successfully!", {
                 position: "top-center"
-              });
+            });
+            setFdate("");
+            setPhone("");
+            setTdate("");
+            setPicktime("");
         }
     }
     return (
-        <div className="container-fluid mb-5">
-            <h2 className='font-bold text-center text-2xl . py-5 hover:underline  delay-400'>Car Rental Form</h2>
-
-            <div className='row '>
+        <div className="container-fluid pt-2">
+            <div className='row'>
                 <div className='col-md-1'></div>
-                <div className='col-md-4 p-3'>
+                <div className='col-md-4 p-3 border-1'>
                     <div className='bg-slate-500'>
                         <img src={location.state.data.img} className=' h-64' />
 
@@ -71,23 +73,20 @@ export default function BookCar() {
                         </table>
                     </div>
                 </div>
-                <div className='col-md-6 bg-[#282828]'>
-                    <Form className=' text-white  p-5' onSubmit={handleSubmit}>
+                <div className='col-md-6'>
+                    <Form className='border-1  p-2 lg:p-5' onSubmit={handleSubmit}>
+                        <h2 className='transition-all font-bold text-left text-2xl py-4 hover:underline delay-400'>Car Rental Form</h2>
                         <Form.Group className="mb-3" >
-                            <div className='row'>
+                            <div className='row space-y-2'>
 
                                 <div className='col-md-6'>
                                     <Form.Label>Full Name*</Form.Label>
-                                    <Form.Control type="Full Name" value={uname} placeholder="Enter Full name"/>
+                                    <Form.Control type="Full Name" defaultValue={uname} placeholder="Enter Full name" />
                                 </div>
                                 <div className='col-md-6'>
                                     <Form.Label>Phone Number*</Form.Label>
                                     <Form.Control type="number" placeholder="Enter phone number" onChange={(e) => setPhone(e.target.value)} />
                                 </div>
-                                {/* <div className='col-md-4'>
-                                    <Form.Label>Email address*</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
-                                </div> */}
 
                             </div>
                         </Form.Group>
@@ -121,19 +120,13 @@ export default function BookCar() {
                             </div>
                         </Form.Group>
 
-                        <div className='row'>
-
-                            <div className='col-md-6'>
-                                <Button className='bg-danger' type="submit" onClick={() => navigate("/")}>
-                                    cancel booking
-                                </Button>
-                            </div>
-                            <div className='col-md-6'>
-                                <ToastContainer/>
-                                <Button className='bg-primary' type="submit">
-                                    Submit
-                                </Button>
-                            </div>
+                        <div className='flex'>
+                            <Button className='' type="submit" onClick={() => navigate("/")}>
+                                cancel booking
+                            </Button>
+                            <button className='bg-emerald-300 px-3 py-1 rounded-md' type="submit">
+                                Submit
+                            </button>
 
                         </div>
                     </Form>

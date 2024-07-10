@@ -1,14 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './cars.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import StarRating from '../starComponent';
 export default function ViewCars() {
-    const [star, setStar] = useState(5);
-
-    const onChange = (nextValue) => {
-        setStar(nextValue)
-    }
     const cars = [{
         id: 1,
         car_img: "https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-4.jpeg?isig=0&q=75",
@@ -133,12 +128,7 @@ export default function ViewCars() {
     ]
     const navigate = useNavigate();
     const handle = (id) => {
-        const req = cars.filter((car) => {
-            if (car.id == id) {
-                return car;
-            }
-        })
-
+        const req = cars.find(car => car.id === id);
         navigate("/singleCar", { state: { req } })
     }
     return (
@@ -164,22 +154,22 @@ export default function ViewCars() {
                     <div className='mx-auto lg:w-[90%]' id='main'>
                         {cars.map((car) => {
                             return (
-                                <article className='bg-[#22222210] transition ease-in-out delay-150 rounded' key={car.car_name}>
+                                <article className='bg-[#23232310] transition ease-in-out delay-150 rounded' key={car.car_name}>
                                     <div className='overflow-hidden p-1 w-full h-56'>
                                         <img src={car.car_img} alt={car.car_name} className='relative w-full h-full transition ease-in-out delay-200 hover:scale-110' />
                                     </div>
-                                    <div className='p-3 text-justify space-y-3'>
+                                    <div className='p-3 text-justify'>
                                         <figcaption className='text-xl font-bold'>{car.car_name}{car.comapany}</figcaption>
-                                        <div className='flex items-center justify-between'>
+                                        <div className='flex items-center justify-between mb-2'>
                                             <p>{car.number_plate}</p>
-                                            <div className='d-flex'>
+                                            <div className='d-flex items-center'>
                                                 <p className='pr-1'>{car.rating}</p>
-
+                                                <StarRating count={car.rating}/>
                                             </div>
                                         </div>
                                         <div className='flex items-center justify-between'>
-                                            <h2>{car.price} per day</h2>
-                                            <button className="btn text-md font-bold bg-teal-600 hover:text-white hover:bg-sky-700" onClick={() => handle(car.id)}>Rent Car</button>
+                                            <h2>₹{car.price.slice(3)} per day</h2>
+                                            <button className="btn text-md font-bold bg-slate-400 hover:text-white hover:bg-sky-700" onClick={() => handle(car.id)}>Rent Car</button>
                                         </div>
                                     </div>
                                 </article>

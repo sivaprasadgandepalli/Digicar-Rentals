@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function SignupPage() {
   const width = {
@@ -33,10 +33,10 @@ export default function SignupPage() {
   }
   const postSubmit = (e) => {
     e.preventDefault();
-    if (RegData.uname != "" && RegData.email != "" && RegData.pwd != "") {
+    if (RegData.uname !== "" && RegData.email !== "" && RegData.pwd !== "") {
       axios.post('https://digicar-rentals-backend.onrender.com/postUser', RegData)
         .then((res) => console.log(res.data));
-      // navigate('/loginPage');
+      navigate('/loginPage');
       setMsg('Account created successfully.Now login to your account');
       handleShow();
       setRegData({
