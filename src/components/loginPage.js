@@ -44,7 +44,7 @@ export default function LoginPage() {
         if (userDet?.email === logData.email && userDet?.pwd === logData.pwd) {
             login(userDet.uname);
             navigate("/", { replace: true });
-            
+
         }
         else {
             handleShow();
