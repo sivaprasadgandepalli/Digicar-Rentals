@@ -34,16 +34,16 @@ const menuItems = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const { isLogin, logout } = useAuth();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleLogout=(e)=>{
+  const handleLogout = (e) => {
     e.preventDefault();
     logout();
     setShow(false);
     navigate('/loginPage');
-    
+
   }
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -51,10 +51,10 @@ export default function Navbar() {
   const [users, setUsers] = useState([{}]);
   let userInfo = {};
   useEffect(() => {
-    axios.get("https://wide-eyed-long-johns-fawn.cyclic.app/userData").
+    axios.get("https://digicar-rentals-backend.onrender.com/userData").
       then((res) => setUsers(res.data)
       );
-    
+
   }, [])
   const find = () => {
     for (let i = 0; i < users.length; i++) {
@@ -88,15 +88,8 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:inline-block">
 
-          {/* <button
-            type="button"
-            className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-
-            onClick={handleShow}>
-            profile
-          </button> */}
           <div className=' bg-green-900 h-12 rounded-full w-12 text-center text-white text-3xl  cursor-pointer' onClick={handleShow}>
-            {isLogin() ? localStorage?.getItem('name')?.slice(0,1):"c"}
+            {isLogin() ? localStorage?.getItem('name')?.slice(0, 1).toLowerCase() : "c"}
           </div>
 
           {/* modal */}
@@ -104,7 +97,7 @@ export default function Navbar() {
             size="sm"
             className='rounded-sm'
           >
-            
+
             <div className=''>
               <div className='w-full h-24 bg-[#002147]'></div>
               <div className='w-full flex relative flex-col justify-center items-center gap-3 h-48'>
@@ -137,7 +130,7 @@ export default function Navbar() {
                   <div className="inline-flex items-center space-x-2">
 
 
-                    <span className="font-bold">DevUI</span>
+                    <span className="font-bold">Digicar</span>
                   </div>
                   <div className="-mr-2">
                     <button
